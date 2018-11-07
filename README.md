@@ -1,6 +1,6 @@
-# LinkPreview
+# LinkPreviewer
 
-Link Preview library written in Elixir
+Link Previewer library written in Elixir
 
 ## Installation
 

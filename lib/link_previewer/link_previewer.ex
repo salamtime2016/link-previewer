@@ -1,6 +1,6 @@
-defmodule LinkPreview do
+defmodule LinkPreviewer do
   @moduledoc """
-  Documentation for LinkPreview.
+  Documentation for LinkPreviewer.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule LinkPreview do
 
   ## Examples
 
-      iex> LinkPreview.hello
+      iex> LinkPreviewer.hello
       :world
 
   """

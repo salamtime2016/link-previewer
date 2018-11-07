@@ -1,12 +1,12 @@
-defmodule LinkPreview.MixProject do
+defmodule LinkPreviewer.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :link_preview,
-      version: "0.1.0",
-      elixir: "~> 1.6",
-      start_permanent: Mix.env() == :prod,
+      app: :link_previewer,
+      dialyzer: dialyzer(),
+      version: "0.0.1",
+      elixir: "~> 1.7",
       deps: deps()
     ]
   end
@@ -23,7 +23,17 @@ defmodule LinkPreview.MixProject do
     [
       {:credo, "~> 0.10", only: ~w(dev test)a},
       {:dialyxir, "~> 1.0.0-rc.3", only: ~w(dev test)a, runtime: false},
-      {:floki, "~> 0.20.0"}
+      {:floki, "~> 0.20.0"},
+      {:httpoison, "~> 1.2"}
+    ]
+  end
+
+  # Dialyzer's configuration
+  defp dialyzer do
+    [
+      flags: ~w(unmatched_returns error_handling race_conditions underspecs unknown)a,
+      ignore_warnings: "config/dialyzer.ignore-warnings",
+      plt_add_apps: ~w(mix ex_unit)a
     ]
   end
 end
