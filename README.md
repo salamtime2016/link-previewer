@@ -1,13 +1,13 @@
 # LinkPreviewer
 
-Link Previewer library written in Elixir
+Link preview library written in Elixir.
 
 ## Installation
 
 ```elixir
 def deps do
   [
-    {:link_preview, github: "salamtime2016/link-preview"}
+    {:link_previewer, github: "salamtime2016/link-previewer"}
   ]
 end
 ```

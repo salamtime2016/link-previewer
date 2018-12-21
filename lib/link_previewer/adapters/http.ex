@@ -9,7 +9,7 @@ defmodule LinkPreviewer.HttpAdapter do
   # TODO move user_agent and ip to adapter's config
   @user_agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 \
 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
-  @ip "18.244.0.1"
+  @ip "64.233.160.0"
   @max_redirect 3
 
   @spec get(link) :: {:ok, response} | {:error, error}
