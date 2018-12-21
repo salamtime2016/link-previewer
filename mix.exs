@@ -21,10 +21,10 @@ defmodule LinkPreviewer.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:credo, "~> 0.10", only: ~w(dev test)a},
+      {:credo, "~> 1.0", only: ~w(dev test)a},
       {:dialyxir, "~> 1.0.0-rc.3", only: ~w(dev test)a, runtime: false},
       {:floki, "~> 0.20.0"},
-      {:httpoison, "~> 1.2"}
+      {:httpoison, "~> 1.5"}
     ]
   end
 
