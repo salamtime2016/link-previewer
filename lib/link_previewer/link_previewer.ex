@@ -4,17 +4,18 @@ defmodule LinkPreviewer do
   """
 
   alias LinkPreviewer.{Error, HttpAdapter}
-  alias LinkPreviewer.Parsers.{Html, Image, Opengraph, YouTube}
+  alias LinkPreviewer.Parsers.{Html, Image, Opengraph, Salamio, YouTube}
   alias LinkPreviewer.Preview
 
   @adapter :core |> Application.get_env(__MODULE__, []) |> Keyword.get(:adapter, HttpAdapter)
 
-  @special_cases ~w(youtube)a
+  @special_cases ~w(salamio youtube)a
 
   @parsers_processors_mapping %{
     default: [Opengraph, Html],
     image: [Image],
-    youtube: [YouTube, Html]
+    youtube: [YouTube, Html],
+    salamio: [Salamio, Html]
   }
 
   @doc """
@@ -78,6 +79,9 @@ defmodule LinkPreviewer do
 
   defp special_case?(:youtube, %{request_url: request_url}),
     do: request_url =~ YouTube.regexp_youtube()
+
+  defp special_case?(:salamio, %{request_url: request_url}),
+    do: request_url =~ Salamio.regexp_salamio()
 
   defp special_case?(_special_case, _request), do: false
 

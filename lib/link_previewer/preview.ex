@@ -1,13 +1,14 @@
 defmodule LinkPreviewer.Preview do
   @moduledoc false
 
-  defstruct ~w(description icon_link image_link link title)a
+  defstruct ~w(description icon_link image_link link title payload)a
 
   @type t :: %__MODULE__{
           description: String.t() | nil,
           icon_link: String.t() | nil,
           image_link: String.t() | nil,
           link: String.t(),
+          payload: map | nil,
           title: String.t() | nil
         }
 
