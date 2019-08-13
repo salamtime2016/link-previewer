@@ -71,6 +71,18 @@ defmodule LinkPreviewer do
     {:ok, :image}
   end
 
+  defp get_processor(
+         %{status_code: 200, headers: %{"content-type" => "text/html" <> _}, body: html} = request
+       ) do
+    with :ok <- validate_format(html) do
+      {:ok, handle_special_cases(request) || :default}
+    end
+  end
+
+  defp get_processor(%{status_code: 200, headers: %{"content-type" => "image/" <> _}}) do
+    {:ok, :image}
+  end
+
   defp get_processor(%{status_code: 200}) do
     {:error, Error.build(:unsupported_format)}
   end
