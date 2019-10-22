@@ -23,7 +23,7 @@ defmodule LinkPreviewer.MixProject do
     [
       {:credo, "~> 1.0", only: ~w(dev test)a},
       {:dialyxir, "~> 1.0.0-rc.3", only: ~w(dev test)a, runtime: false},
-      {:floki, "~> 0.20.0"},
+      {:floki, "~> 0.23.0"},
       {:httpoison, "~> 1.5"}
     ]
   end
